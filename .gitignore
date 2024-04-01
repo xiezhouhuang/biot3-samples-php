@@ -1,0 +1,6 @@
+.idea
+.vscode
+.tgitconfig
+vendor
+composer.lock
+logs

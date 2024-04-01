@@ -1,0 +1,22 @@
+{
+    "name": "kyzone/biot3-samples-php",
+    "description": "物联平台PHP SDK",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joe Xie",
+            "email": "xiezhouhuang@msqsoft.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "hanson/foundation-sdk": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kyzone\\BIot\\": "src"
+        }
+    }
+}
