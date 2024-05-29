@@ -9,12 +9,9 @@ use Kyzone\BIot\Exception\IotException;
 
 class AccessToken extends AbstractAccessToken
 {
-    const API_URL = 'https://pmpiot.dev2.kyzone.cn/ky-api';
-    const SANDBOX_API_URL = 'https://pmpiot.dev2.kyzone.cn/ky-api';
-
     protected $prefix = 'kyzone.biot.php.token.';
 
-    private $url;
+    protected $url;
 
     protected $appId;
 
@@ -42,14 +39,14 @@ class AccessToken extends AbstractAccessToken
      *
      * @param $appId string appid
      * @param $secret string secret
-     * @param bool $debug
+     * @param $url  string $url
      */
-    public function __construct(string $appId, string $secret, bool $debug, Foundation $app)
+    public function __construct(string $appId, string $secret, string $url, Foundation $app)
     {
         parent::__construct($app);
         $this->appId = $appId;
         $this->secret = $secret;
-        $this->url = $debug ? static::SANDBOX_API_URL : static::API_URL;
+        $this->url = $url;
     }
 
     public function setSignType($signType)
@@ -62,6 +59,7 @@ class AccessToken extends AbstractAccessToken
     {
         return $this->signType;
     }
+
 
     public function setExpires($expires)
     {

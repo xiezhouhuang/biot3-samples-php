@@ -3,12 +3,9 @@
 
 namespace Kyzone\BIot\Core;
 
-use GuzzleHttp\Exception\ClientException;
 use Hanson\Foundation\AbstractAPI;
 use Kyzone\BIot\Base\SplBean;
 use Kyzone\BIot\Exception\IotException;
-use Psr\Http\Client\ClientExceptionInterface;
-use Psr\Http\Client\ClientInterface;
 
 class Api extends AbstractAPI
 {
