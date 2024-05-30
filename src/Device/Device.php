@@ -130,7 +130,7 @@ class Device extends Api
     public function deviceUnDeploy(array $deviceArr): ResponseMessageInteger
     {
         //TODO
-        $result = $this->post("/api/v1/device/_unDeploy", new SplBean([$deviceArr]));
+        $result = $this->post("/api/v1/device/_unDeploy", $deviceArr);
         return new ResponseMessageInteger($result);
     }
 
@@ -163,7 +163,7 @@ class Device extends Api
      */
     public function batchDeviceDeploy(array $params): ResponseMessageInteger
     {
-        $result = $this->post("/api/v1/device/_deploy", new SplBean([$params]));
+        $result = $this->post("/api/v1/device/_deploy", $params);
         return new ResponseMessageInteger($result);
     }
 
@@ -174,7 +174,7 @@ class Device extends Api
      */
     public function batchDeviceDelete(array $params): ResponseMessageInteger
     {
-        $result = $this->post("/api/v1/device/_delete", new SplBean([$params]));
+        $result = $this->post("/api/v1/device/_delete", $params);
         return new ResponseMessageInteger($result);
     }
 
@@ -197,7 +197,7 @@ class Device extends Api
      */
     public function deviceTemplateDownload(string $productId, string $format): ResponseMessageVoid
     {
-        $result = $this->get("/api/v1/device/{$productId}/template.{$format}", new SplBean());
+        $result = $this->get("/api/v1/device/{$productId}/template.{$format}", []);
         return new ResponseMessageVoid($result);
     }
 
